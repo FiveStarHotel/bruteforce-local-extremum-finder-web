@@ -2,9 +2,15 @@
 
 .output-wrapper {
   height: 100%;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .output {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   &__header {
     background-color: var(--color-console-background-alt);
     border: var(--color-console-border);
@@ -64,5 +70,7 @@
     font-weight: 400;
     font-size: var(--font-size-regular);
     color: #fff;
+
+    flex-grow: 1;
   }
 }
