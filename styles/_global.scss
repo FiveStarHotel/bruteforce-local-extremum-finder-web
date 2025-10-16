@@ -8,4 +8,9 @@ body {
   color: var(--color-font-primary);
   font-size: 14px;
   font-family: "Roboto_c", sans-serif;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
 }
