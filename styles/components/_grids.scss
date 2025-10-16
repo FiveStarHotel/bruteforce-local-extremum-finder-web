@@ -1,0 +1,21 @@
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 20px;
+
+  grid-template-areas: "conf graph graph"
+                       "out out out";
+}
+
+.config-form-wrapper {
+  grid-area: conf;
+}
+
+.graph-wrapper {
+  grid-area: graph;
+}
+
+.output-wrapper {
+  grid-area: out;
+}
