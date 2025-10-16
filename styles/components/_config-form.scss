@@ -38,4 +38,10 @@
 
     padding-inline: calc(var(--configFormRadiosPaddingInline) - var(--fieldsetPaddingInline));
   }
+
+  &__submit-button {
+    font-size: var(--font-size-big);
+
+    width: 100%;
+  }
 }

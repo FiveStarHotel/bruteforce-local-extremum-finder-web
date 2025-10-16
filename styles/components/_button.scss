@@ -1,0 +1,38 @@
+@use "../helpers" as *;
+
+.button {
+  border: none;
+  border-radius: 3px;
+
+  background-color: var(--color-accent-primary);
+  color: var(--color-background-secondary);
+
+  font-weight: 600;
+  font-size: var(--font-size-bigger);
+
+  padding: 10px;
+
+  cursor: pointer;
+
+  transition-duration: var(--transition-duration);
+
+  @include hover {
+    background-color: var(--color-accent-primary-hover);
+  }
+
+  &_danger {
+    background-color: var(--color-accent-danger);
+
+    @include hover {
+      background-color: var(--color-accent-danger-hover);
+    }
+  }
+
+  &_secondary {
+    background-color: var(--color-accent-secondary);
+
+    @include hover {
+      background-color: var(--color-border);
+    }
+  }
+}

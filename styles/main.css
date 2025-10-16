@@ -476,6 +476,54 @@ body {
   grid-area: out;
 }
 
+.button {
+  border: none;
+  border-radius: 3px;
+  background-color: var(--color-accent-primary);
+  color: var(--color-background-secondary);
+  font-weight: 600;
+  font-size: var(--font-size-bigger);
+  padding: 10px;
+  cursor: pointer;
+  transition-duration: var(--transition-duration);
+}
+@media (any-hover: hover) {
+  .button:hover {
+    background-color: var(--color-accent-primary-hover);
+  }
+}
+@media (any-hover: none) {
+  .button:active {
+    background-color: var(--color-accent-primary-hover);
+  }
+}
+.button_danger {
+  background-color: var(--color-accent-danger);
+}
+@media (any-hover: hover) {
+  .button_danger:hover {
+    background-color: var(--color-accent-danger-hover);
+  }
+}
+@media (any-hover: none) {
+  .button_danger:active {
+    background-color: var(--color-accent-danger-hover);
+  }
+}
+.button_secondary {
+  background-color: var(--color-accent-secondary);
+}
+@media (any-hover: hover) {
+  .button_secondary:hover {
+    background-color: var(--color-border);
+  }
+}
+@media (any-hover: none) {
+  .button_secondary:active {
+    background-color: var(--color-border);
+  }
+}
+
 .config-form {
   background-color: var(--color-background-secondary);
   border: var(--border);
@@ -507,6 +555,10 @@ body {
   justify-content: space-between;
   column-gap: 5px;
   padding-inline: calc(var(--configFormRadiosPaddingInline) - var(--fieldsetPaddingInline));
+}
+.config-form__submit-button {
+  font-size: var(--font-size-big);
+  width: 100%;
 }
 
 .fieldset {
