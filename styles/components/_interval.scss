@@ -1,0 +1,9 @@
+.interval {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__divider {
+    font-size: 24px;
+  }
+}
