@@ -1,0 +1,26 @@
+:root {
+  --color-background-main: #F9FAFB;
+  --color-background-secondary: #FFFFFF;
+  --color-border: #D1D5DB;
+  --color-font-primary: #1F2937;
+  --color-font-secondary: #6B7280;
+  --color-accent-primary: #3B82F6;
+  --color-accent-primary-hover: #2563EB;
+  --color-accent-succes: #16A34A;
+  --color-accent-warning: #F97316;
+  --color-accent-warning-hover: #EA580C;
+  --color-accent-danger: #DC2626;
+  --color-accent-danger-hover: #B91C1C;
+  --color-accent-secondary: #E5E7EB;
+  --color-console-background: #1F2937;
+  --color-console-background-alt: #33445B;
+  --color-console-header-button: #1A222E;
+  --color-console-header-font: #EDF1F7;
+  --color-console-border: #445A79;
+  --color-console-info: #38BDF8;
+  --color-console-error: #F87171;
+  --color-console-update: #A78BFA;
+  --color-console-result: #4ADE80;
+}
+
+/*# sourceMappingURL=main.css.map */
