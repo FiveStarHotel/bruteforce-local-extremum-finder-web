@@ -19,6 +19,7 @@
   --color-console-background: #1F2937;
   --color-console-background-alt: #33445B;
   --color-console-header-button: #1A222E;
+  --color-console-header-button-hover: #283548;
   --color-console-header-font: #EDF1F7;
   --color-console-border: #445A79;
   --color-console-info: #38BDF8;
@@ -27,6 +28,8 @@
   --color-console-result: #4ADE80;
 
   --border: 1px solid var(--color-border);
+  --border-console: 1px solid var(--color-console-border);
+
   --border-radius-block: 7px;
   --border-radius-input: 3px;
 
