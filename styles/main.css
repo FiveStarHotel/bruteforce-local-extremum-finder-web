@@ -51,5 +51,17 @@
   font-style: normal;
   font-display: swap;
 }
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-background-main);
+  color: var(--color-font-primary);
+  font-size: 14px;
+  font-family: "Roboto_c", sans-serif;
+}
 
 /*# sourceMappingURL=main.css.map */
