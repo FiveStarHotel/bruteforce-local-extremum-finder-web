@@ -386,6 +386,7 @@ table {
   --color-console-result: #4ADE80;
   --border: 1px solid var(--color-border);
   --border-radius-block: 7px;
+  --border-radius-input: 3px;
   --font-size-regular: 14px;
   --font-size-bigger: 16px;
   --font-size-big: 20px;
@@ -493,6 +494,13 @@ body {
   flex-direction: column;
   row-gap: 20px;
 }
+.config-form__fieldsets > .one-row {
+  display: flex;
+  column-gap: 20px;
+}
+.config-form__fieldsets:not(:last-child) {
+  margin-bottom: 30px;
+}
 .config-form__radios {
   --configFormRadiosPaddingInline: 64px;
   display: flex;
@@ -521,7 +529,7 @@ body {
 
 .select__select {
   border: var(--border);
-  border-radius: 3px;
+  border-radius: var(--border-radius-input);
   padding: 10px 5px;
   font-size: var(--font-size-regular);
 }
@@ -556,6 +564,21 @@ body {
 }
 .radio-button__marker:checked ~ .radio-button__label > .radio-button__custom-radio::after {
   scale: 1;
+}
+
+.input input {
+  border: var(--border);
+  border-radius: var(--border-radius-input);
+  padding: 10px;
+}
+
+.interval {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.interval__divider {
+  font-size: 24px;
 }
 
 /*# sourceMappingURL=main.css.map */
