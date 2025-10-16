@@ -1,0 +1,26 @@
+.fieldset {
+  --fieldsetPaddingInline: 15px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+
+  padding: 10px var(--fieldsetPaddingInline) 15px;
+
+  &__legend {
+    font-size: var(--font-size-bigger);
+    font-weight: 600;
+    padding-inline: 5px;
+  }
+
+  & > .select {
+    select {
+      width: 100%;
+    }
+  }
+
+  & > .input {
+    input {
+      width: 100%;
+    }
+  }
+}

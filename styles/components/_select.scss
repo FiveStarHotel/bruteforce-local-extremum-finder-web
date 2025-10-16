@@ -1,0 +1,9 @@
+.select {
+  &__select {
+    border: var(--border);
+    border-radius: 3px;
+    padding: 10px 5px;
+
+    font-size: var(--font-size-regular);
+  }
+}

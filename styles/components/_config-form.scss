@@ -1,0 +1,32 @@
+.config-form {
+  background-color: var(--color-background-secondary);
+  border: var(--border);
+  border-radius: var(--border-radius-block);
+
+  padding: 20px;
+
+  &__title {
+    font-size: var(--font-size-big);
+    font-weight: 600;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__fieldsets {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  &__radios {
+    --configFormRadiosPaddingInline: 64px;
+
+    display: flex;
+    justify-content: space-between;
+    column-gap: 5px;
+
+    padding-inline: calc(var(--configFormRadiosPaddingInline) - var(--fieldsetPaddingInline));
+  }
+}
