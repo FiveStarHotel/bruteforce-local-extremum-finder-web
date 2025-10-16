@@ -431,4 +431,9 @@ body {
   padding-inline: 5px;
 }
 
+.grid-wrapper {
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+}
+
 /*# sourceMappingURL=main.css.map */
