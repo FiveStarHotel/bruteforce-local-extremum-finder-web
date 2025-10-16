@@ -696,4 +696,19 @@ body {
   }
 }
 
+.graph {
+  background-color: var(--color-background-secondary);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--border-radius-block);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.graph__title {
+  font-size: var(--font-size-big);
+  font-weight: 300;
+  color: var(--color-font-secondary);
+}
+
 /*# sourceMappingURL=main.css.map */
