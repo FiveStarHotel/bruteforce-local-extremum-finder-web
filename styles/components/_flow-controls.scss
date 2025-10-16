@@ -1,0 +1,51 @@
+@use "../helpers" as *;
+
+.flow-controls {
+  background-color: var(--color-background-secondary);
+  border: var(--border);
+  border-radius: var(--border-radius-block);
+
+  padding: 10px;
+
+  display: flex;
+  column-gap: 10px;
+
+  &__button {
+    flex-grow: 1;
+
+    padding-block: 4px;
+
+    &:disabled {
+      opacity: 0.65;
+    }
+
+    & svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    &_continue {
+      background-color: var(--color-accent-succes);
+
+      @include hover {
+        background-color: var(--color-accent-succes-hover);
+      }
+    }
+
+    &_pause {
+      background-color: var(--color-accent-warning);
+
+      @include hover {
+        background-color: var(--color-accent-warning-hover);
+      }
+    }
+
+    &_stop {
+      background-color: var(--color-accent-danger);
+
+      @include hover {
+        background-color: var(--color-accent-danger-hover);
+      }
+    }
+  }
+}

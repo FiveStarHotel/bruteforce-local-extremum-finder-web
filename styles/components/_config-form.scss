@@ -5,6 +5,10 @@
 
   padding: 20px;
 
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
   &__title {
     font-size: var(--font-size-big);
     font-weight: 600;

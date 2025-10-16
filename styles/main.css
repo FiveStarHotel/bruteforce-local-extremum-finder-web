@@ -370,6 +370,7 @@ table {
   --color-accent-primary: #3B82F6;
   --color-accent-primary-hover: #2563EB;
   --color-accent-succes: #16A34A;
+  --color-accent-succes-hover: #12873D;
   --color-accent-warning: #F97316;
   --color-accent-warning-hover: #EA580C;
   --color-accent-danger: #DC2626;
@@ -530,6 +531,9 @@ body {
   border-radius: var(--border-radius-block);
   padding: 20px;
 }
+.config-form:not(:last-child) {
+  margin-bottom: 10px;
+}
 .config-form__title {
   font-size: var(--font-size-big);
   font-weight: 600;
@@ -631,6 +635,65 @@ body {
 }
 .interval__divider {
   font-size: 24px;
+}
+
+.flow-controls {
+  background-color: var(--color-background-secondary);
+  border: var(--border);
+  border-radius: var(--border-radius-block);
+  padding: 10px;
+  display: flex;
+  column-gap: 10px;
+}
+.flow-controls__button {
+  flex-grow: 1;
+  padding-block: 4px;
+}
+.flow-controls__button:disabled {
+  opacity: 0.65;
+}
+.flow-controls__button svg {
+  width: 32px;
+  height: 32px;
+}
+.flow-controls__button_continue {
+  background-color: var(--color-accent-succes);
+}
+@media (any-hover: hover) {
+  .flow-controls__button_continue:hover {
+    background-color: var(--color-accent-succes-hover);
+  }
+}
+@media (any-hover: none) {
+  .flow-controls__button_continue:active {
+    background-color: var(--color-accent-succes-hover);
+  }
+}
+.flow-controls__button_pause {
+  background-color: var(--color-accent-warning);
+}
+@media (any-hover: hover) {
+  .flow-controls__button_pause:hover {
+    background-color: var(--color-accent-warning-hover);
+  }
+}
+@media (any-hover: none) {
+  .flow-controls__button_pause:active {
+    background-color: var(--color-accent-warning-hover);
+  }
+}
+.flow-controls__button_stop {
+  background-color: var(--color-accent-danger);
+}
+@media (any-hover: hover) {
+  .flow-controls__button_stop:hover {
+    background-color: var(--color-accent-danger-hover);
+  }
+}
+@media (any-hover: none) {
+  .flow-controls__button_stop:active {
+    background-color: var(--color-accent-danger-hover);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
