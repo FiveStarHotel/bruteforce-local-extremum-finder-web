@@ -29,3 +29,19 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "JetBrainsMono_c";
+  font-weight: 400;
+  src: url("../fonts/JetBrainsMono-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrainsMono_c";
+  font-weight: 700;
+  src: url("../fonts/JetBrainsMono-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
