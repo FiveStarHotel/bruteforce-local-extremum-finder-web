@@ -11,7 +11,73 @@
 <body>
     <div class="container grid-wrapper">
         <div class="config-form-wrapper">
-            <h1 class="title">Test</h1>
+            <form class="config-form">
+                <h1 class="config-form__title">Поиск локального экстремума функции методом перебора</h1>
+                <div class="config-form__fieldsets">
+                    <fieldset class="fieldset config-form__fieldset-function-select">
+                        <legend class="fieldset__legend">Функция</legend>
+
+                        <div class="select">
+                            <label class="visually-hidden" for="configFunctionSelect">Функция</label>
+                            <select name="function" id="configFunctionSelect" class="select__select">
+                                <option value="0">f(x) = 2x^2 - 2x - 1</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="fieldset config-form__fieldset-type">
+                        <legend class="fieldset__legend">Тип локального экстремума</legend>
+
+                        <div class="radio-button">
+                            <input type="radio" name="extremumType" id="configRadioMin">
+                            <label for="configRadioMin">Минимум</label>
+                        </div>
+                        <div class="radio-button">
+                            <input type="radio" name="extremumType" id="configRadioMax">
+                            <label for="configRadioMax">Максимум</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="fieldset config-form__fieldset-interval">
+                        <legend class="fieldset__legend">Интервал [a,b]</legend>
+
+                        <div class="interval">
+                            <div class="input interval__input">
+                                <input type="number" step="1" name="intervalStart" id="configInputIntervalStart" value="-5" required>
+                                <label for="configInputIntervalStart" class="visually-hidden">Начало интервала</label>
+                            </div>
+                            <p class="interval__divider">—</p>
+                            <div class="input interval__input">
+                                <input type="number" step="1" name="intervalEnd" id="configInputIntervalEnd" value="5" required>
+                                <label for="configInputIntervalEnd" class="visually-hidden">Конец интервала</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="one-row">
+
+                        <fieldset class="fieldset config-form__fieldset-accuracy">
+                            <legend class="fieldset__legend">Точность</legend>
+
+                                <div class="input">
+                                    <input type="number" step="any" min="0.00000000000001" name="accuracy" id="configInputAccuracy" value="0.01" required>
+                                    <label for="configInputAccuracy" class="visually-hidden">Точность</label>
+                                </div>
+                        </fieldset>
+
+                        <fieldset class="fieldset config-form__fieldset-latency">
+                            <legend class="fieldset__legend">Задержка (мс)</legend>
+
+                            <div class="input">
+                                <input type="number" step="any" min="0.00000000000001" max="2" name="latency" id="configInputLatency" value="0.05" required>
+                                <label for="configInputLatency" class="visually-hidden">Задержка в миллисекундах</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+
+                <button class="button button_primary" type="submit">Найти экстремум</button>
+            </form>
         </div>
 
         <div class="graph-wrapper">
