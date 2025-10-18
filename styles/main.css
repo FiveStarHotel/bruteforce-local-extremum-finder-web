@@ -557,14 +557,27 @@ body {
 .config-form__title:not(:last-child) {
   margin-bottom: 30px;
 }
-.config-form__fieldsets {
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
+.config-form__fieldset-function-select {
+  grid-area: funcSelect;
 }
-.config-form__fieldsets > .one-row {
-  display: flex;
-  column-gap: 20px;
+.config-form__fieldset-type {
+  grid-area: type;
+}
+.config-form__fieldset-interval {
+  grid-area: interval;
+}
+.config-form__fieldset-accuracy {
+  grid-area: accuracy;
+}
+.config-form__fieldset-latency {
+  grid-area: latency;
+}
+.config-form__fieldsets {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  gap: 20px;
+  grid-template-areas: "funcSelect accuracy" "interval interval" "type type" "latency latency";
 }
 .config-form__fieldsets:not(:last-child) {
   margin-bottom: 30px;

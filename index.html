@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./styles/main.css">
-    <title>Document</title>
+    <title>Поиск локального экстремума</title>
 </head>
 <body>
     <div class="container grid-wrapper">
@@ -62,26 +62,23 @@
                         </div>
                     </fieldset>
 
-                    <div class="one-row">
-
-                        <fieldset class="fieldset config-form__fieldset-accuracy">
-                            <legend class="fieldset__legend">Точность</legend>
-
-                                <div class="input">
-                                    <input type="number" step="any" min="0.00000000000001" name="accuracy" id="configInputAccuracy" value="0.01" required>
-                                    <label for="configInputAccuracy" class="visually-hidden">Точность</label>
-                                </div>
-                        </fieldset>
-
-                        <fieldset class="fieldset config-form__fieldset-latency">
-                            <legend class="fieldset__legend">Задержка (мс)</legend>
+                    <fieldset class="fieldset config-form__fieldset-accuracy">
+                        <legend class="fieldset__legend">Точность</legend>
 
                             <div class="input">
-                                <input type="number" step="any" min="0.00000000000001" max="2" name="latency" id="configInputLatency" value="0.05" required>
-                                <label for="configInputLatency" class="visually-hidden">Задержка в миллисекундах</label>
+                                <input type="number" step="any" min="0.00000000000001" name="accuracy" id="configInputAccuracy" value="0.01" required>
+                                <label for="configInputAccuracy" class="visually-hidden">Точность</label>
                             </div>
-                        </fieldset>
-                    </div>
+                    </fieldset>
+
+                    <fieldset class="fieldset config-form__fieldset-latency">
+                        <legend class="fieldset__legend">Задержка (мс)</legend>
+
+                        <div class="input">
+                            <input type="number" step="any" min="0.00000000000001" max="2" name="latency" id="configInputLatency" value="0.05" required>
+                            <label for="configInputLatency" class="visually-hidden">Задержка в миллисекундах</label>
+                        </div>
+                    </fieldset>
                 </div>
 
                 <button class="button config-form__submit-button" type="submit">Найти экстремум</button>
