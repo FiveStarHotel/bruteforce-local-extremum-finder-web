@@ -762,6 +762,7 @@ body {
   border: 1px solid var(--color-console-border);
   border-radius: 4px;
   padding: 4px;
+  cursor: pointer;
 }
 .output__header-clear-button, .output__header-clear-button svg {
   transition-duration: var(--transition-duration);
