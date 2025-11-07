@@ -104,7 +104,6 @@ class SimpleBruteForce {
 
         step = (rightBound - leftBound) / INTERMEDIATE_POINTS_AMOUNT;
 
-        // TODO: Закончить
         logFunction(
           `Шаг равен <b>${outputStep}</b>`,
           "stepChanged"
