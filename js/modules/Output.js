@@ -10,7 +10,7 @@ class Output {
       this.#clearOutput();
 
       window.output = {
-        testLog: this.#log,
+        testLog: this.log,
       }
 
       this.#buttonClearOutput.addEventListener("click", this.#clearOutput);
@@ -20,7 +20,7 @@ class Output {
     this.#elementOutput.innerHTML = "";
   }
 
-  #log = (messageHTML, messageType) => {
+  log = (messageHTML, messageType) => {
     const messageElement = document.createElement("div");
     messageElement.className = "output__message-container";
 
