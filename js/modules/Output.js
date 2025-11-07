@@ -7,16 +7,12 @@ class Output {
       this.#elementOutput = document.querySelector("#outputContainer");
       this.#buttonClearOutput = document.querySelector("#outputClearButton");
 
-      this.#clearOutput();
+      this.clearOutput();
 
-      window.output = {
-        testLog: this.log,
-      }
-
-      this.#buttonClearOutput.addEventListener("click", this.#clearOutput);
+      this.#buttonClearOutput.addEventListener("click", this.clearOutput);
   }
 
-  #clearOutput = () => {
+  clearOutput = () => {
     this.#elementOutput.innerHTML = "";
   }
 
