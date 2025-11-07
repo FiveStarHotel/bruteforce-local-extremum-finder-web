@@ -1,11 +1,16 @@
 import functions from "./functions.js";
+import SimpleBruteForce from "./SimpleBruteForce.js";
 
 class Form {
   #formElement;
 
   #functionSelect;
 
-  constructor() {
+  #outputObject;
+
+  constructor(outputObject) {
+    this.#outputObject = outputObject;
+
     this.#formElement = document.querySelector("#functionConfigForm");
 
     this.#functionSelect = document.querySelector("#configFunctionSelect");
@@ -28,18 +33,26 @@ class Form {
     const options = this.#unpackForm(this.#formElement);
 
     console.log(options);
+
+    SimpleBruteForce.findLocalExtremum(
+      {
+        func: functions[options.functionId].func,
+        ...options
+      },
+      this.#outputObject.log
+    )
   }
 
   #unpackForm = (formElement) => {
     const formData = new FormData(formElement);
 
     return {
-      functionId: formData.get("function"),
-      accuracy: formData.get("accuracy"),
-      intervalFrom: formData.get("intervalStart"),
-      intervalTo: formData.get("intervalEnd"),
+      functionId: Number(formData.get("function")),
+      accuracy: Number(formData.get("accuracy")),
+      intervalFrom: Number(formData.get("intervalStart")),
+      intervalTo: Number(formData.get("intervalEnd")),
       type: formData.get("extremumType"),
-      latency: formData.get("latency"),
+      latency: Number(formData.get("latency")),
     }
   }
 }
