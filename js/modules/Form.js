@@ -32,7 +32,7 @@ class Form {
 
     const options = this.#unpackForm(this.#formElement);
 
-    console.log(options);
+    this.#outputObject.clearOutput();
 
     SimpleBruteForce.findLocalExtremum(
       {
