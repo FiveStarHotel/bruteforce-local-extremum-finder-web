@@ -55,20 +55,21 @@ class SimpleBruteForce {
 
     let iterationCount = 0;
 
-    // Strings to output
-    let outputCurrentX = currentX.toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_SMALL);
-    let outputNextX = (currentX + step).toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_SMALL);
-
-    let outputCurrentFunctionValue = func(currentX).toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_BIG);
-    let outputNextFunctionValue = func(currentX + step).toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_BIG);
-
-    let outputLeftBound = leftBound.toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_SMALL);
-    let outputRightBound = rightBound.toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_SMALL);
-
-    let outputStep = step.toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_BIG);
-    /////////////////////
-
+    let outputCurrentX, outputNextX, outputCurrentFunctionValue, outputNextFunctionValue, outputLeftBound, outputRightBound, outputStep;
     while (rightBound - leftBound > accuracy) {
+      // Strings to output
+      outputCurrentX = currentX.toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_SMALL);
+      outputNextX = (currentX + step).toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_SMALL);
+
+      outputCurrentFunctionValue = func(currentX).toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_BIG);
+      outputNextFunctionValue = func(currentX + step).toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_BIG);
+
+      outputLeftBound = leftBound.toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_SMALL);
+      outputRightBound = rightBound.toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_SMALL);
+
+      outputStep = step.toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_BIG);
+      /////////////////////
+
       iterationCount++;
 
       // TODO: Сделать счетчик итераций
