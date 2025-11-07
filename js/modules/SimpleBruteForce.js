@@ -43,12 +43,6 @@ class SimpleBruteForce {
       },
     }
 
-    const terminalMessages = {
-      message() {
-
-      }
-    }
-
     let leftBound = start;
     let rightBound = end;
 
