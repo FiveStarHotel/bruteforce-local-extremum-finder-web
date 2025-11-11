@@ -86,4 +86,35 @@
 
     overflow-y: auto;
   }
+
+  &__message-container {
+    &[data-type="message"] {
+      --message-highlight-color: var(--color-console-info);
+    }
+
+    &[data-type="error"] {
+      --message-highlight-color: var(--color-console-error);
+    }
+
+    &[data-type="stepChanged"] {
+      --message-highlight-color: var(--color-console-update);
+    }
+
+    &[data-type="endOfSearch"] {
+      --message-highlight-color: var(--color-console-result);
+    }
+
+    &[data-type="intervalChanged"] {
+      --message-highlight-color: var(--color-console-update);
+    }
+
+    &[data-type="finalExtremum"] {
+      --message-highlight-color: var(--color-console-result);
+    }
+
+    & > span, & > b {
+      color: var(--message-highlight-color);
+      font-weight: 700;
+    }
+  }
 }

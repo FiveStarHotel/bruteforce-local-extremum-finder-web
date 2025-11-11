@@ -815,5 +815,27 @@ body {
   row-gap: 10px;
   overflow-y: auto;
 }
+.output__message-container[data-type=message] {
+  --message-highlight-color: var(--color-console-info);
+}
+.output__message-container[data-type=error] {
+  --message-highlight-color: var(--color-console-error);
+}
+.output__message-container[data-type=stepChanged] {
+  --message-highlight-color: var(--color-console-update);
+}
+.output__message-container[data-type=endOfSearch] {
+  --message-highlight-color: var(--color-console-result);
+}
+.output__message-container[data-type=intervalChanged] {
+  --message-highlight-color: var(--color-console-update);
+}
+.output__message-container[data-type=finalExtremum] {
+  --message-highlight-color: var(--color-console-result);
+}
+.output__message-container > span, .output__message-container > b {
+  color: var(--message-highlight-color);
+  font-weight: 700;
+}
 
 /*# sourceMappingURL=main.css.map */

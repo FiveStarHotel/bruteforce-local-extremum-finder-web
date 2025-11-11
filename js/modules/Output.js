@@ -19,9 +19,10 @@ class Output {
   log = (messageHTML, messageType) => {
     const messageElement = document.createElement("div");
     messageElement.className = "output__message-container";
+    messageElement.setAttribute("data-type", messageType);
 
     messageElement.insertAdjacentHTML("afterbegin",
-      `<span class="${this.#messageTypes[messageType].className}">${this.#messageTypes[messageType].prefix}</span>`
+      `<span>${this.#messageTypes[messageType].prefix}</span>`
     )
 
     messageElement.insertAdjacentHTML("beforeend",
