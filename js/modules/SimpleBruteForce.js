@@ -1,13 +1,13 @@
 class SimpleBruteForce {
   static findLocalExtremum = (
-  {
-  func,
-  accuracy,
-  intervalFrom: start,
-  intervalTo: end,
-  type,
-  latency
-  }, logFunction) => {
+    {
+      func,
+      accuracy,
+      intervalFrom: start,
+      intervalTo: end,
+      type,
+      latency
+    }, logFunction) => {
     if (end <= start) {
       throw new Error("Точка начала должна быть меньше точки конца!");
     }
@@ -55,38 +55,29 @@ class SimpleBruteForce {
 
     let iterationCount = 0;
 
-    let outputCurrentX, outputNextX, outputCurrentFunctionValue, outputNextFunctionValue, outputLeftBound, outputRightBound, outputStep;
+    const format = {
+      short: (value) => value.toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_SMALL),
+      long: (value) => value.toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_BIG),
+    };
+
     while (rightBound - leftBound > accuracy) {
-      // Strings to output
-      outputCurrentX = currentX.toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_SMALL);
-      outputNextX = (currentX + step).toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_SMALL);
-
-      outputCurrentFunctionValue = func(currentX).toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_BIG);
-      outputNextFunctionValue = func(currentX + step).toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_BIG);
-
-      outputLeftBound = leftBound.toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_SMALL);
-      outputRightBound = rightBound.toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_SMALL);
-
-      outputStep = step.toFixed(NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_BIG);
-      /////////////////////
-
       iterationCount++;
 
       // TODO: Сделать счетчик итераций
       logFunction(
-        `Текущее значение <b>x = ${outputCurrentX}</b>, <b>f(${outputCurrentX}) = ${outputCurrentFunctionValue}</b>`,
+        `Текущее значение <b>x = ${format.short(currentX)}</b>, <b>f(${format.short(currentX)}) = ${format.long(func(currentX))}</b>`,
         "message"
       )
 
       if (actions[type].compare(func(currentX), func(currentX + step))) {
         logFunction(
-          `Локальный ${actions[type].extremumWord} находится между <b>f(${outputCurrentX}) = ${outputCurrentFunctionValue}</b> и <b>f(${outputNextX}) = ${outputNextFunctionValue}</b>`,
+          `Локальный ${actions[type].extremumWord} находится между <b>f(${format.short(currentX)}) = ${format.long(func(currentX))}</b> и <b>f(${format.short(currentX + step)}) = ${format.long(func(currentX + step))}</b>`,
           "message"
         )
 
         if (currentX === start) {
           logFunction(
-            `Локальный ${actions[type].extremumWord} был обнаружен в одном из концов промежутка в точке <b>x = ${outputCurrentX}</b>`,
+            `Локальный ${actions[type].extremumWord} был обнаружен в одном из концов промежутка в точке <b>x = ${format.short(currentX)}</b>`,
             "endOfSearch"
           )
 
@@ -99,14 +90,14 @@ class SimpleBruteForce {
         rightBound = currentX + step;
 
         logFunction(
-          `Поиск в промежутке <b>[${outputLeftBound}, ${outputRightBound}]</b>`,
+          `Поиск в промежутке <b>[${format.short(leftBound)}, ${format.short(rightBound)}]</b>`,
           "intervalChanged"
         )
 
         step = (rightBound - leftBound) / INTERMEDIATE_POINTS_AMOUNT;
 
         logFunction(
-          `Шаг равен <b>${outputStep}</b>`,
+          `Шаг равен <b>${format.long(step)}</b>`,
           "stepChanged"
         )
 
@@ -115,7 +106,7 @@ class SimpleBruteForce {
 
       if (currentX >= end) {
         logFunction(
-          `Локальный ${actions[type].extremumWord} был обнаружен на одном из концов промежутка в точке <b>x = ${outputCurrentX}</b>`,
+          `Локальный ${actions[type].extremumWord} был обнаружен на одном из концов промежутка в точке <b>x = ${format.short(currentX)}</b>`,
           "endOfSearch"
         )
 
@@ -129,13 +120,13 @@ class SimpleBruteForce {
 
     if (isEndOfAccuracy) {
       logFunction(
-        `Шаг = <b>${outputStep}</b> меншье заданной точности = <b>${accuracy}</b>. Поиск прекращен.`,
+        `Шаг = <b>${format.long(step)}</b> меншье заданной точности = <b>${accuracy}</b>. Поиск прекращен.`,
         "endOfSearch"
       )
     }
 
     logFunction(
-      `Локальный ${actions[type].extremumWord} был найден в точке <b>f(${outputCurrentX}) = ${outputCurrentFunctionValue}</b> за ${iterationCount} итераций`,
+      `Локальный ${actions[type].extremumWord} был найден в точке <b>f(${format.short(currentX)}) = ${format.long(func(currentX))}</b> за ${iterationCount} итераций`,
       "finalExtremum"
     )
   }
