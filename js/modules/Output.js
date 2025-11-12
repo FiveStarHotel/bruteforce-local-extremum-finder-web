@@ -29,7 +29,7 @@ class Output {
       `${messageHTML}`
     )
 
-    this.#elementOutput.append(messageElement);
+    this.#elementOutput.prepend(messageElement);
   }
 
   #messageTypes = {
