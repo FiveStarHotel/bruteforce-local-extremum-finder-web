@@ -1,12 +1,14 @@
+import Utils from "./Utils.js";
+
 class SimpleBruteForce {
-  static findLocalExtremum = (
+  static findLocalExtremum = async (
     {
       func,
       accuracy,
       intervalFrom: start,
       intervalTo: end,
       type,
-      latency
+      latency: latencySeconds
     }, logFunction) => {
     if (end <= start) {
       throw new Error("Точка начала должна быть меньше точки конца!");
@@ -20,7 +22,7 @@ class SimpleBruteForce {
       throw new Error("Неверно указан тип экстремума!");
     }
 
-    if (latency < 0) {
+    if (latencySeconds < 0) {
       throw new Error("Задержка между операциями должна быть положительной!");
     }
 
@@ -62,6 +64,8 @@ class SimpleBruteForce {
 
     while (rightBound - leftBound > accuracy) {
       iterationCount++;
+
+      await Utils.wait(latencySeconds);
 
       // TODO: Сделать счетчик итераций
       logFunction(

@@ -27,14 +27,14 @@ class Form {
     })
   }
 
-  #onSubmit = (e) => {
+  #onSubmit = async (e) => {
     e.preventDefault();
 
     const options = this.#unpackForm(this.#formElement);
 
     this.#outputObject.clearOutput();
 
-    SimpleBruteForce.findLocalExtremum(
+    await SimpleBruteForce.findLocalExtremum(
       {
         func: functions[options.functionId].func,
         ...options
