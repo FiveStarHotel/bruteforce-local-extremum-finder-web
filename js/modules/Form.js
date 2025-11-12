@@ -1,5 +1,4 @@
 import functions from "./functions.js";
-import SimpleBruteForce from "./SimpleBruteForce.js";
 
 class Form {
   #formElement;
@@ -7,12 +6,16 @@ class Form {
 
   #functionSelect;
 
+  #algorithmFunction
   #outputObject;
+  #flowControls;
 
   #elementsToLock;
 
-  constructor(outputObject) {
+  constructor(algorithmFunction, outputObject, flowControls) {
+    this.#algorithmFunction = algorithmFunction;
     this.#outputObject = outputObject;
+    this.#flowControls = flowControls;
 
     this.#formElement = document.querySelector("#functionConfigForm");
     this.#submitButton = document.querySelector("#formSubmitBtn");
@@ -43,16 +46,18 @@ class Form {
     this.#outputObject.clearOutput();
 
     this.#lockForm();
+    this.#flowControls.unlock();
 
-    await SimpleBruteForce.findLocalExtremum(
+    await this.#algorithmFunction(
       {
         func: functions[options.functionId].func,
         ...options
-      },
-      this.#outputObject.log
+      }
     )
 
     this.#unlockForm();
+    this.#flowControls.lock();
+    this.#flowControls.restart();
   }
 
   #unpackForm = (formElement) => {

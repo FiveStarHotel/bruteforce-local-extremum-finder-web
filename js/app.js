@@ -1,6 +1,13 @@
+import BruteForce from "./modules/BruteForce.js";
 import Form from "./modules/Form.js"
 import Output from "./modules/Output.js";
+import FlowController from "./modules/FlowController.js";
+import FlowControls from "./modules/FlowControls.js";
 
 const output = new Output();
+const bruteForce = new BruteForce(output.log);
 
-const form = new Form(output);
+const flowController = new FlowController();
+const flowControls = new FlowControls(flowController);
+
+const form = new Form(bruteForce.findLocalExtremum, output, flowControls);
