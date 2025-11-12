@@ -690,7 +690,7 @@ body {
   flex-grow: 1;
   padding-block: 4px;
 }
-.flow-controls__button svg {
+.flow-controls__button-icon {
   width: 32px;
   height: 32px;
 }
