@@ -3,18 +3,26 @@ import SimpleBruteForce from "./SimpleBruteForce.js";
 
 class Form {
   #formElement;
+  #submitButton;
 
   #functionSelect;
 
   #outputObject;
 
+  #elementsToLock;
+
   constructor(outputObject) {
     this.#outputObject = outputObject;
 
     this.#formElement = document.querySelector("#functionConfigForm");
+    this.#submitButton = document.querySelector("#formSubmitBtn");
 
     this.#functionSelect = document.querySelector("#configFunctionSelect");
     this.#fillFunctionSelect(functions);
+
+    this.#elementsToLock = [...this.#formElement.querySelectorAll("fieldset")];
+    this.#elementsToLock.push(this.#submitButton);
+    console.log(this.#elementsToLock); // DEBUG
 
     this.#formElement.addEventListener("submit", this.#onSubmit);
   }
@@ -34,6 +42,8 @@ class Form {
 
     this.#outputObject.clearOutput();
 
+    this.#lockForm();
+
     await SimpleBruteForce.findLocalExtremum(
       {
         func: functions[options.functionId].func,
@@ -41,6 +51,8 @@ class Form {
       },
       this.#outputObject.log
     )
+
+    this.#unlockForm();
   }
 
   #unpackForm = (formElement) => {
@@ -55,6 +67,9 @@ class Form {
       latency: Number(formData.get("latency")),
     }
   }
+
+  #lockForm = () => this.#elementsToLock.forEach(fieldset => fieldset.setAttribute("disabled", true));
+  #unlockForm = () => this.#elementsToLock.forEach(fieldset => fieldset.removeAttribute("disabled"));
 }
 
 export default Form;

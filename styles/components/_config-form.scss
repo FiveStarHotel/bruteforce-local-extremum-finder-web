@@ -25,6 +25,11 @@
 
     &-type {
       grid-area: type;
+
+      &:disabled .radio-button {
+        opacity: 0.65;
+        pointer-events: none;
+      }
     }
 
     &-interval {

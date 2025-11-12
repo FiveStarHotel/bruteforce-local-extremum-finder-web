@@ -43,4 +43,9 @@
   &__marker:checked ~ &__label > &__custom-radio::after {
     scale: 1;
   }
+
+  &:disabled {
+    opacity: 0.65;
+    pointer-events: none;
+  }
 }

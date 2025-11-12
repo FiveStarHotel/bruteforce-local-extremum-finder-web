@@ -540,6 +540,10 @@ body {
     background-color: var(--color-border);
   }
 }
+.button:disabled {
+  opacity: 0.65;
+  pointer-events: none;
+}
 
 .config-form {
   background-color: var(--color-background-secondary);
@@ -562,6 +566,10 @@ body {
 }
 .config-form__fieldset-type {
   grid-area: type;
+}
+.config-form__fieldset-type:disabled .radio-button {
+  opacity: 0.65;
+  pointer-events: none;
 }
 .config-form__fieldset-interval {
   grid-area: interval;
@@ -650,6 +658,10 @@ body {
 .radio-button__marker:checked ~ .radio-button__label > .radio-button__custom-radio::after {
   scale: 1;
 }
+.radio-button:disabled {
+  opacity: 0.65;
+  pointer-events: none;
+}
 
 .input input {
   border: var(--border);
@@ -677,10 +689,6 @@ body {
 .flow-controls__button {
   flex-grow: 1;
   padding-block: 4px;
-}
-.flow-controls__button:disabled {
-  opacity: 0.65;
-  pointer-events: none;
 }
 .flow-controls__button svg {
   width: 32px;
