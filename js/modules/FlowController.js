@@ -2,11 +2,11 @@ class FlowController {
   #isPause = false;
   #isStop = false;
 
-  get isPause() {
+  isPause = () => {
     return this.#isPause;
   }
 
-  get isStop() {
+  isStop = () => {
     return this.#isStop;
   }
 

@@ -31,7 +31,7 @@ class FlowControls {
   }
 
   #onPauseClick = () => {
-    switch (this.#flowController.isPause) {
+    switch (this.#flowController.isPause()) {
       case true:
         this.#unpause();
         break;

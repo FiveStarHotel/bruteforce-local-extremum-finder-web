@@ -2,9 +2,11 @@ import Utils from "./Utils.js";
 
 class BruteForce {
   #logFunction;
+  #flowController;
 
-  constructor(logFunction) {
+  constructor(logFunction, flowController) {
     this.#logFunction = logFunction;
+    this.#flowController = flowController;
   }
 
   findLocalExtremum = async (
@@ -39,6 +41,8 @@ class BruteForce {
     const NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_SMALL = 2;
     const NUMBERS_AMOUNT_AFTER_DECIMAL_POINT_BIG = 3;
 
+    const MESSAGE_EXECUTION_ABORTED = "Выполнение прервано пользователем!";
+
     const actions = {
       min: {
         compare: (current, next) => current < next,
@@ -69,6 +73,20 @@ class BruteForce {
     };
 
     while (rightBound - leftBound > accuracy) {
+      if (this.#flowController.isStop()) {
+        this.#flowController.restart();
+        throw new Error(MESSAGE_EXECUTION_ABORTED);
+      }
+
+      while (this.#flowController.isPause()) {
+        await Utils.wait(100)
+
+        if (this.#flowController.isStop()) {
+          this.#flowController.restart();
+          throw new Error(MESSAGE_EXECUTION_ABORTED);
+        }
+      }
+
       iterationCount++;
 
       await Utils.wait(latencySeconds);

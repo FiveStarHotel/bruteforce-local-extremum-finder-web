@@ -48,16 +48,20 @@ class Form {
     this.#lockForm();
     this.#flowControls.unlock();
 
-    await this.#algorithmFunction(
-      {
-        func: functions[options.functionId].func,
-        ...options
-      }
-    )
-
-    this.#unlockForm();
-    this.#flowControls.lock();
-    this.#flowControls.restart();
+    try {
+      await this.#algorithmFunction(
+        {
+          func: functions[options.functionId].func,
+          ...options
+        }
+      )
+    } catch (err) {
+      this.#outputObject.log(err.message, "error");
+    } finally {
+      this.#unlockForm();
+      this.#flowControls.lock();
+      this.#flowControls.restart();
+    }
   }
 
   #unpackForm = (formElement) => {
