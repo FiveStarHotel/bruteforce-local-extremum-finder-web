@@ -1,10 +1,10 @@
 class Utils {
-  static wait = async (seconds) => {
-    if (seconds === 0) {
+  static wait = async (ms) => {
+    if (ms === 0) {
       return;
     }
 
-    return new Promise(resolve => setTimeout(() => resolve(), seconds * 1000));
+    return new Promise(resolve => setTimeout(() => resolve(), ms));
   }
 }
 

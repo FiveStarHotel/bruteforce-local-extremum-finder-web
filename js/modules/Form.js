@@ -69,7 +69,7 @@ class Form {
       intervalFrom: Number(formData.get("intervalStart")),
       intervalTo: Number(formData.get("intervalEnd")),
       type: formData.get("extremumType"),
-      latency: Number(formData.get("latency")),
+      latency: Number(formData.get("latency")) * 1000,
     }
   }
 
